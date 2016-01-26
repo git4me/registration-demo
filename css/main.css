@@ -2,10 +2,6 @@ h1.main-heading {
 	margin-bottom: 20px;
 }
 
-#navbar-collapse {
-	padding: 0;
-}
-
 .navbar-default {
 	border-radius: 0;
 	background-color: #6699cc;

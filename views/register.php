@@ -1,41 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Registration Demo</title>
-		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<link href="css/main.css" rel="stylesheet">
-	</head>
-	<body>
-		<nav class="navbar navbar-default">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-				</div>
-
-				<div class="collapse navbar-collapse" id="navbar-collapse">
-					<ul class="nav navbar-nav">
-						<li class="active"><a href="#">nav1 <span class="sr-only">(current)</span></a></li>
-						<li><a href="#">nav2</a></li>
-						<li><a href="#">nav3</a></li>
-						<li><a href="#">nav4</a></li>
-					</ul>
-
-					<ul class="nav navbar-nav navbar-right">
-						<li><a href="#">nav5</a></li>
-					</ul>
-				</div>
-			</div>
-		</nav>
-
-		<div class="container-fluid">
 			<div class="row">
 				<div class="col-sm-12">
 					<h1 class="main-heading">User Registration</h1>
@@ -44,36 +6,36 @@
 
 			<div class="row">
 				<div class="col-sm-6">
-					<form class="form-horizontal">
+					<form method="post" action="/register" class="form-horizontal">
 						<div class="form-group">
 							<label for="email" class="col-sm-4 control-label">Email</label>
 							<div class="col-sm-8">
-								<input type="email" class="form-control" id="email" name="email" placeholder="Email">
+								<input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="password" class="col-sm-4 control-label">Password</label>
 							<div class="col-sm-8">
-								<input type="password" class="form-control" id="password" name="password" placeholder="Password">
+								<input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="password_confirm" class="col-sm-4 control-label">Confirm password</label>
 							<div class="col-sm-8">
-								<input type="password" class="form-control" id="password_confirm" name="password_confirm" placeholder="Confirm password">
+								<input type="password" class="form-control" id="password_confirm" name="password_confirm" placeholder="Confirm password" required>
 							</div>
 						</div>
 						<hr>
 						<div class="form-group">
 							<label for="name" class="col-sm-4 control-label">Name</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" id="name" name="name" placeholder="Name">
+								<input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="dob" class="col-sm-4 control-label">Date of birth</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" id="dob" name="dob" placeholder="dd/mm/yyyy">
+								<input type="text" class="form-control" id="dob" name="dob" placeholder="dd/mm/yyyy" required>
 							</div>
 						</div>
 						<div class="form-group">
@@ -99,16 +61,5 @@
 						rutrum tellus.</p>
 					</div>
 				</div>
-
-
-
+				
 			</div>
-
-		</div>
-
-
-
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-	</body>
-</html>
