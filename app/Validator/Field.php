@@ -1,5 +1,14 @@
 <?php namespace Register\Validator;
 
+/**
+ * Field object represents an input field from POST or GET. This base object Field
+ * has some sensible defaults that can be overridden in child objects.
+ * 
+ * The child objects in Validator\Field all represent a field type that can be supplied
+ * to the configuration of the Validator.
+ * 
+ * @see Field\Date, Field\Email, Field\Password, Field\Text
+ */
 class Field {
 	
 	/**
@@ -48,17 +57,19 @@ class Field {
 	
 	/**
 	 * Returns an array of errors that were logged for the field during validation
+	 * @final
 	 * @return array
 	 */
-	public function getErrors() {
+	final public function getErrors() {
 		return $this->errors;
 	}
 	
 	/**
 	 * Returns the content of the field, post validation
+	 * @final
 	 * @return string
 	 */
-	public function getFieldContent() {
+	final public function getFieldContent() {
 		return $this->fieldContent;
 	}
 }

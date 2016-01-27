@@ -48,7 +48,7 @@ class Validator {
 	public function run() {
 		$this->errors = [];
 		foreach($this->config as $field => $validationObject) {
-			// Load the specified Field object from the configuration array
+			// Dynamically load the specified Field object from the configuration array
 			$objectName = '\Register\Validator\Field\\' . $validationObject;
 			$fieldObject = new $objectName($this->inputMethod, $field);
 			

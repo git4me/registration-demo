@@ -2,6 +2,11 @@
 
 use Flight;
 
+/**
+ * Default controller. Allows seperation of application logic from the
+ * bootstrapping in index.php. Also let's us keep the logic for each page
+ * nicely seperated for maintainability.
+ */
 class Controller {
 	
 	/**
@@ -18,7 +23,12 @@ class Controller {
 	 * Handle data that was POSTed to the register page
 	 */
 	public static function postRegister() {
-		// Construct a Validator object to verify the input is correct
+		/*
+		 * Construct a Validator object to verify the input is correct
+		 * Validation is designed to be extensible, with objects defined for a 
+		 * specific type of field, rather than one validation object trying to handle
+		 * every type of field.
+		 */
 		$validator = new Validator(INPUT_POST, [
 			'email' => 'Email',
 			'password' => 'Password',
