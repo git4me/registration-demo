@@ -33,8 +33,20 @@ class Controller {
 			], 'body_content');
 			Flight::render('layout/layout');
 		} else {
-			// Success, save the data
+			// Success, get the valid data back from the validator object
+			$content = $validator->getFields();
 			
+			// Create a new user object
+			$user = new User;
+			$user->name = $content['name'];
+			$user->email = $content['email'];
+			$user->password = $content['password'];
+			$user->dob = $content['dob'];
+			
+			// Save the user data
+			$user->save();
+			
+			// Redirect to thank you page
 			Flight::redirect('/thanks');
 		}
 	}

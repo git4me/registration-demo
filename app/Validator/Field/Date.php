@@ -18,6 +18,9 @@ class Date extends Field {
 			$this->errors[] = 'Not a valid date';
 			return false;
 		}
+		
+		// Update field content to match output format
+		$this->fieldContent = $dateParts[2] . '-' . $dateParts[1] . '-' . $dateParts[0];
 		return true;
 	}
 	

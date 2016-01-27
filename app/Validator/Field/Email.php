@@ -1,6 +1,8 @@
 <?php namespace Register\Validator\Field;
 
 use Register\Validator\Field;
+use Flight;
+use PDO;
 
 class Email extends Field {
 	
@@ -20,7 +22,19 @@ class Email extends Field {
 		return false;
 	}
 	
+	/**
+	 * Connect to the database and query if any users exist for the supplied email
+	 * @return boolean
+	 */
 	private function checkEmailDatabase() {
+		$db = Flight::db();
+		$sql = 'SELECT COUNT(*) as count FROM users WHERE email = ?';
+		$sth = $db->prepare($sql);
+		$sth->execute([$this->fieldContent]);
+		$result = $sth->fetchAll();
+		if($result[0]['count'] > 0) {
+			return false;
+		}
 		return true;
 	}
 }

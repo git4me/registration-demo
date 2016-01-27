@@ -26,6 +26,12 @@ class Validator {
 	private $errors = [];
 	
 	/**
+	 * Array of the output fields that have been validated succesfully
+	 * @var array
+	 */
+	private $fields = [];
+	
+	/**
 	 * Build the Validator object
 	 * @param int $inputMethod One of INPUT_GET, INPUT_POST
 	 * @param array $config
@@ -49,6 +55,8 @@ class Validator {
 			// Determine if any errors occured during validation of this field
 			if(!$fieldObject->validate()) {
 				$this->errors[$field] = $fieldObject->getErrors();
+			} else {
+				$this->fields[$field] = $fieldObject->getFieldContent();
 			}
 		}
 		// If any errors were recorded return false
@@ -64,5 +72,13 @@ class Validator {
 	 */
 	public function getErrors() {
 		return $this->errors;
+	}
+	
+	/**
+	 * Returns the array of fields and their contents
+	 * @return array
+	 */
+	public function getFields() {
+		return $this->fields;
 	}
 }

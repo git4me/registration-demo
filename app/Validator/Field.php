@@ -53,4 +53,12 @@ class Field {
 	public function getErrors() {
 		return $this->errors;
 	}
+	
+	/**
+	 * Returns the content of the field, post validation
+	 * @return string
+	 */
+	public function getFieldContent() {
+		return $this->fieldContent;
+	}
 }
