@@ -8,7 +8,9 @@ class Controller {
 	 * Method for rendering the inital registration page
 	 */
 	public static function getRegister() {
-		Flight::render('register', [], 'body_content');
+		Flight::render('register', [
+			'errors' => []
+		], 'body_content');
 		Flight::render('layout/layout');
 	}
 	

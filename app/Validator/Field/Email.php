@@ -6,6 +6,11 @@ use PDO;
 
 class Email extends Field {
 	
+	/**
+	 * Validate that the email address submitted is a valid format and does not
+	 * already exist in the user database
+	 * @return boolean
+	 */
 	public function validate() {
 		$this->fieldContent = filter_input($this->inputMethod, $this->field, FILTER_VALIDATE_EMAIL);
 		if($this->fieldContent !== false) {
